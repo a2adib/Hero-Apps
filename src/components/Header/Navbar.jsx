@@ -5,7 +5,8 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="shadow-sm">
+        <div className="navbar bg-base-100 max-w-[1600px] mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,26 +30,18 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+           <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+              <Link to="/Apps">Apps</Link>
+          </li>
+          <li>
+            <Link to="/Installed">Installed</Link>
+          </li>
           </ul>
         </div>
-        <a className="btn btn-ghost">
+        <a className="btn btn-ghost flex item-c">
             <img src={logo} alt="" className="w-[40px]"/>
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold">HERO.IO</p>
         </a>
@@ -56,13 +49,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to={/}>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-              <a>Apps</a>
+              <Link to="/Apps">Apps</Link>
           </li>
           <li>
-            <a>Installed</a>
+            <Link to="/Installed">Installed</Link>
           </li>
         </ul>
       </div>
@@ -71,6 +64,7 @@ const Navbar = () => {
             <img src={gitLogo} alt="" />
             Contribute</a>
       </div>
+    </div>
     </div>
   );
 };

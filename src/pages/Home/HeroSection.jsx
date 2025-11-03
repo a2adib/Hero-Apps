@@ -1,11 +1,10 @@
-import React from 'react';
+
 import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero.png";
 
-
-const Apps = () => {
-    return (
-         <div>
+const HeroSection = () => {
+  return (
+    <div>
       <h1>We Build</h1>
       <h1>
         <span>Productive</span> App
@@ -25,7 +24,7 @@ const Apps = () => {
       </div>
       <img src={heroImg} alt="Hero banner" />
     </div>
-    );
+  );
 };
 
-export default Apps;
+export default HeroSection;
