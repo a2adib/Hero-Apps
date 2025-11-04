@@ -1,10 +1,10 @@
 import React from 'react';
 
 const AppCard = ({app}) => {
-    const { image, title, downloads, rating } = app
+    const { image, title, companyName, downloads, ratingAvg: rating } = app;
     return (
         <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-      {/* Image */}
+
       <div className="p-3">
         {image ? (
           <img
@@ -17,17 +17,15 @@ const AppCard = ({app}) => {
         )}
       </div>
 
-      {/* Title */}
       <div className="px-3 pb-3">
         <h3 className="text-sm font-semibold text-slate-800 leading-snug">
           {title}
         </h3>
+        <p className="text-xs text-slate-500">{companyName}</p>
 
-        {/* Badges */}
+
         <div className="mt-3 flex items-center gap-2">
-          {/* Downloads */}
           <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600">
-            {/* download icon */}
             <svg
               viewBox="0 0 24 24"
               className="h-4 w-4"
@@ -42,9 +40,7 @@ const AppCard = ({app}) => {
             {downloads}
           </span>
 
-          {/* Rating */}
           <span className="inline-flex items-center gap-1 rounded-md bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-600">
-            {/* star icon */}
             <svg
               viewBox="0 0 24 24"
               className="h-4 w-4 fill-current"

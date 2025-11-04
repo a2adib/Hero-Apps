@@ -1,6 +1,7 @@
 import React from "react";
 import useApps from "../../hooks/useApps";
 import AppCard from "../AppCard/AppCard";
+import { Link } from "react-router-dom";
 
 const TrendingApps = () => {
   const { apps } = useApps()
@@ -22,6 +23,16 @@ const TrendingApps = () => {
             <AppCard key={app.id} app={app}/>
           ))
         }
+      </div>
+      <div className="mt-4">
+        <Link
+        to="/Apps"
+      className="px-6 py-2 rounded-md text-white font-medium 
+                 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] 
+                 shadow-sm"
+    >
+      Show All
+    </Link>
       </div>
     </section>
   );
