@@ -1,4 +1,3 @@
-
 import { createBrowserRouter } from "react-router";
 
 import Root from '../pages/Root/Root';
@@ -16,7 +15,6 @@ export const router = createBrowserRouter([
     children:[
         {
             index: true,
-            path: "/",
             Component: Home
         },
         {
