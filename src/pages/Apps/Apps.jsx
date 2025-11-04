@@ -1,31 +1,28 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import heroImg from "../../assets/hero.png";
+import AppCard from '../../components/AppCard/AppCard';
+import useApps from '../../hooks/useApps';
 
 
 const Apps = () => {
-    return (
-         <div>
-      <h1>We Build</h1>
-      <h1>
-        <span>Productive</span> App
-      </h1>
-      <p>
-        At HERO.IO, we craft innovative apps designed to make everyday life
-        simpler, smarter, and more exciting. Our goal is to turn your ideas into
-        digital experiences that truly make an impact.
-      </p>
-      <div>
-        <div>
-          <Link to="#">Google Play</Link>
-        </div>
-        <div>
-          <Link to="#">App Store</Link>
-        </div>
+  const { apps } = useApps()
+  return (
+    
+    <section className="py-10">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          All Apps {apps.length}
+        </h2>
+        <p className="mt-2 text-sm text-gray-500">
+          Explore All Apps on the Market developed by us
+        </p>
       </div>
-      <img src={heroImg} alt="Hero banner" />
-    </div>
-    );
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {
+            apps.map(app => <AppCard key={app.id} app={app} />)
+        }
+      </div>
+    </section>
+
+  );
 };
 
 export default Apps;
