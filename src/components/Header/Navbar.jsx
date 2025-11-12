@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import gitLogo from "../../assets/gitLogo.png";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -27,17 +27,17 @@ const Navbar = () => {
             </svg>
           </div>
           <ul
-            tabIndex="-1"
+            tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
            <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Home</NavLink>
           </li>
           <li>
-              <Link to="/Apps">Apps</Link>
+              <NavLink to="/Apps" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Apps</NavLink>
           </li>
           <li>
-            <Link to="/Installed">Installed</Link>
+            <NavLink to="/Installed" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Installed</NavLink>
           </li>
           </ul>
         </div>
@@ -49,18 +49,18 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Home</NavLink>
           </li>
           <li>
-              <Link to="/Apps">Apps</Link>
+              <NavLink to="/Apps" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Apps</NavLink>
           </li>
           <li>
-            <Link to="/Installed">Installed</Link>
+            <NavLink to="/Installed" className={({ isActive }) => isActive ? "text-blue-600 font-bold" : ""}>Installed</NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to={"https://github.com/a2adib"} 
+        <Link to={"https://github.com/a2adib"}
         target="_blank"
         className="btn text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-semibold">
             <img src={gitLogo} alt="" />
