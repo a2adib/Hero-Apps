@@ -9,10 +9,12 @@ const Root = () => {
     const navigation = useNavigation();
 
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             {navigation.state === 'loading' && <LoadingSpinner />}
             <Navbar/>
-            <Outlet/>
+            <div className="flex-grow">
+                <Outlet/>
+            </div>
             <Footer/>
             <Toaster/>
         </div>

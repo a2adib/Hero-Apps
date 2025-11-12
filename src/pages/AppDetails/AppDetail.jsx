@@ -43,10 +43,10 @@ const AppDetail = () => {
 
     return (
         <div className="p-4 md:p-8 font-sans bg-[#F5F5F5]">
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="max-w-4xl mx-auto overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-start space-y-6 sm:space-y-0 sm:space-x-6 p-6 border-b">
                     
-                    <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-blue-50 shadow-md flex items-center justify-center border border-blue-200">
+                    <div className=" w-20 h-20 rounded-2xl bg-blue-50 shadow-md flex items-center justify-center border border-blue-200">
                         <img src={app.image} alt={`${app.title} icon`} className="w-12 h-12 object-contain" />
                     </div>
 
@@ -107,7 +107,7 @@ const AppDetail = () => {
                         <div className="space-y-3">
                             {app.ratings.map((rating) => (
                                 <div key={rating.name} className="flex items-center space-x-3">
-                                    <span className="text-sm font-medium text-gray-600 w-12 flex-shrink-0 whitespace-nowrap">
+                                    <span className="text-sm font-medium text-gray-600 w-12  whitespace-nowrap">
                                         {rating.name}
                                     </span>
                                     <div className="w-full bg-gray-200 rounded-full h-3">
@@ -117,7 +117,7 @@ const AppDetail = () => {
                                             title={`${rating.count} ratings`}
                                         ></div>
                                     </div>
-                                    <span className="text-xs font-medium text-gray-400 w-12 flex-shrink-0 text-right">
+                                    <span className="text-xs font-medium text-gray-400 w-12  text-right">
                                         {(rating.count / 1000).toFixed(0)}k
                                     </span>
                                 </div>
