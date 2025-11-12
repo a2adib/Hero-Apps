@@ -20,10 +20,13 @@ const TrendingApps = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-5 gap-5">
         {
           trendingApps.map(app => (
-            <AppCard key={app.id} app={app}/>
+            <Link key={app.id} to={`/apps/${app.id}`}>
+              <AppCard app={app}/>
+            </Link>
           ))
         }
       </div>
+
       <div className="mt-4">
         <Link
         to="/Apps"

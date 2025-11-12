@@ -41,10 +41,10 @@ const Navbar = () => {
           </li>
           </ul>
         </div>
-        <a className="btn btn-ghost flex item-c">
+        <Link to="/" className="btn btn-ghost flex item-c">
             <img src={logo} alt="" className="w-[40px]"/>
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2] font-bold">HERO.IO</p>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
